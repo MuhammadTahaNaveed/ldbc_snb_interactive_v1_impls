@@ -30,4 +30,5 @@ scripts/stop-neo4j.sh
 scripts/delete-neo4j-database.sh
 scripts/import-to-neo4j.sh
 scripts/start-neo4j.sh
-scripts/create-indices.sh
+# Dont use indices for now, once we are confirm that we can build these indices on AGE too, will enable here as well.
+# scripts/create-indices.sh

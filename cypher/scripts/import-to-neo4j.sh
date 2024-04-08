@@ -27,7 +27,7 @@ docker run --rm \
     ${NEO4J_ENV_VARS} \
     ${NEO4J_DOCKER_PLATFORM_FLAG} \
     neo4j:${NEO4J_VERSION} \
-    neo4j-admin import \
+    neo4j-admin database import full \
     --id-type=INTEGER \
     --nodes=Place="/import/static/place${NEO4J_CSV_POSTFIX}" \
     --nodes=Organisation="/import/static/organisation${NEO4J_CSV_POSTFIX}" \
