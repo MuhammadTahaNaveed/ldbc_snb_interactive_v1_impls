@@ -5,7 +5,7 @@
   8796093022390 AS person2Id
 }
 */
-MATCH path = allShortestPaths((person1:Person { id: $person1Id })-[:KNOWS*0..]-(person2:Person { id: $person2Id }))
+MATCH path = allShortestPaths((person1:Person { id: 8796093022357 })-[:KNOWS*0..]-(person2:Person { id: 8796093022390 }))
 WITH collect(path) as paths
 UNWIND paths as path
 WITH path, relationships(path) as rels_in_path

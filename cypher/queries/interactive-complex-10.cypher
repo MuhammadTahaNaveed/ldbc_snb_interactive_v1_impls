@@ -5,13 +5,13 @@
   5 AS month
 }
 */
-MATCH (person:Person {id: $personId})-[:KNOWS*2..2]-(friend),
+MATCH (person:Person {id: 4398046511333})-[:KNOWS*2..2]-(friend),
        (friend)-[:IS_LOCATED_IN]->(city:City)
 WHERE NOT friend=person AND
       NOT (friend)-[:KNOWS]-(person)
 WITH person, city, friend, datetime({epochMillis: friend.birthday}) as birthday
-WHERE  (birthday.month=$month AND birthday.day>=21) OR
-        (birthday.month=($month%12)+1 AND birthday.day<22)
+WHERE  (birthday.month=5 AND birthday.day>=21) OR
+        (birthday.month=(5%12)+1 AND birthday.day<22)
 WITH DISTINCT friend, city, person
 OPTIONAL MATCH (friend)<-[:HAS_CREATOR]-(post:Post)
 WITH friend, city, collect(post) AS posts, person

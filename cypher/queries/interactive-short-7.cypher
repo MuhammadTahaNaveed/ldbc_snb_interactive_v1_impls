@@ -2,7 +2,7 @@
 /*
 :param messageId: 206158432794
  */
-MATCH (m:Message {id: $messageId })<-[:REPLY_OF]-(c:Comment)-[:HAS_CREATOR]->(p:Person)
+MATCH (m:Message {id: 206158432794 })<-[:REPLY_OF]-(c:Comment)-[:HAS_CREATOR]->(p:Person)
     OPTIONAL MATCH (m)-[:HAS_CREATOR]->(a:Person)-[r:KNOWS]-(p)
     RETURN c.id AS commentId,
         c.content AS commentContent,

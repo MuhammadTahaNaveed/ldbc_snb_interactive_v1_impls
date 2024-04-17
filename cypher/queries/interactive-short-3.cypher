@@ -2,7 +2,7 @@
 /*
 :param personId: 10995116277794
  */
-MATCH (n:Person {id: $personId })-[r:KNOWS]-(friend)
+MATCH (n:Person {id: 10995116277794 })-[r:KNOWS]-(friend)
 RETURN
     friend.id AS personId,
     friend.firstName AS firstName,

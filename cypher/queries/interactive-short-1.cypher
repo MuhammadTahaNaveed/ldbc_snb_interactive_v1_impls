@@ -2,7 +2,7 @@
 /*
 :param personId: 10995116277794
  */
-MATCH (n:Person {id: $personId })-[:IS_LOCATED_IN]->(p:City)
+MATCH (n:Person {id: 10995116277794 })-[:IS_LOCATED_IN]->(p:City)
 RETURN
     n.firstName AS firstName,
     n.lastName AS lastName,

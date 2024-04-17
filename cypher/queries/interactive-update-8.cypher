@@ -1,2 +1,2 @@
-MATCH (p1:Person {id: $person1Id}), (p2:Person {id: $person2Id})
-CREATE (p1)-[:KNOWS {creationDate: $creationDate}]->(p2)
+MATCH (p1:Person {id: 21990232558208}), (p2:Person {id: 32985348841200})
+CREATE (p1)-[:KNOWS {creationDate: 1347529389109}]->(p2)

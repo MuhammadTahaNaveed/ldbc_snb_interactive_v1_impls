@@ -6,9 +6,9 @@
 }
 */
 MATCH (tag:Tag)-[:HAS_TYPE|IS_SUBCLASS_OF*0..]->(baseTagClass:TagClass)
-WHERE tag.name = $tagClassName OR baseTagClass.name = $tagClassName
+WHERE tag.name = "Monarch" OR baseTagClass.name = "Monarch"
 WITH collect(tag.id) as tags
-MATCH (:Person {id: $personId })-[:KNOWS]-(friend:Person)<-[:HAS_CREATOR]-(comment:Comment)-[:REPLY_OF]->(:Post)-[:HAS_TAG]->(tag:Tag)
+MATCH (:Person {id: 10995116278009 })-[:KNOWS]-(friend:Person)<-[:HAS_CREATOR]-(comment:Comment)-[:REPLY_OF]->(:Post)-[:HAS_TAG]->(tag:Tag)
 WHERE tag.id in tags
 RETURN
     friend.id AS personId,

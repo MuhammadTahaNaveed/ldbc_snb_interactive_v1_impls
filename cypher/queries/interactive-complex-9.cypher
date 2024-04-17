@@ -5,12 +5,12 @@
   1289908800000 AS maxDate
 }
 */
-MATCH (root:Person {id: $personId })-[:KNOWS*1..2]-(friend:Person)
+MATCH (root:Person {id: 4398046511268 })-[:KNOWS*1..2]-(friend:Person)
 WHERE NOT friend = root
 WITH collect(distinct friend) as friends
 UNWIND friends as friend
     MATCH (friend)<-[:HAS_CREATOR]-(message:Message)
-    WHERE message.creationDate < $maxDate
+    WHERE message.creationDate < 1289908800000
 RETURN
     friend.id AS personId,
     friend.firstName AS personFirstName,

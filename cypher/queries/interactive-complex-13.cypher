@@ -6,8 +6,8 @@
 }
 */
 MATCH
-    (person1:Person {id: $person1Id}),
-    (person2:Person {id: $person2Id}),
+    (person1:Person {id: 8796093022390}),
+    (person2:Person {id: 8796093022357}),
     path = shortestPath((person1)-[:KNOWS*]-(person2))
 RETURN
     CASE path IS NULL

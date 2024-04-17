@@ -5,7 +5,7 @@
   "Jose" AS firstName
 }
 */
-MATCH (p:Person {id: $personId}), (friend:Person {firstName: $firstName})
+MATCH (p:Person {id: 4398046511333}), (friend:Person {firstName: "Jose"})
        WHERE NOT p=friend
        WITH p, friend
        MATCH path = shortestPath((p)-[:KNOWS*1..3]-(friend))

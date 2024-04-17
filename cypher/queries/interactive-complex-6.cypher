@@ -5,10 +5,10 @@
   "Carl_Gustaf_Emil_Mannerheim" AS tagName
 }
 */
-MATCH (knownTag:Tag { name: $tagName })
+MATCH (knownTag:Tag { name: "Carl_Gustaf_Emil_Mannerheim" })
 WITH knownTag.id as knownTagId
 
-MATCH (person:Person { id: $personId })-[:KNOWS*1..2]-(friend)
+MATCH (person:Person { id: 4398046511333 })-[:KNOWS*1..2]-(friend)
 WHERE NOT person=friend
 WITH
     knownTagId,

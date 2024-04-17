@@ -5,8 +5,8 @@
   1287230400000 AS maxDate
 }
 */
-MATCH (:Person {id: $personId })-[:KNOWS]-(friend:Person)<-[:HAS_CREATOR]-(message:Message)
-    WHERE message.creationDate <= $maxDate
+MATCH (:Person {id: 10995116278009 })-[:KNOWS]-(friend:Person)<-[:HAS_CREATOR]-(message:Message)
+    WHERE message.creationDate <= 1287230400000
     RETURN
         friend.id AS personId,
         friend.firstName AS personFirstName,

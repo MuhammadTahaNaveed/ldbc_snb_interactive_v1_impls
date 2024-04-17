@@ -5,13 +5,13 @@
   1288612800000 AS minDate
 }
 */
-MATCH (person:Person { id: $personId })-[:KNOWS*1..2]-(friend)
+MATCH (person:Person { id: 6597069766734 })-[:KNOWS*1..2]-(friend)
 WHERE
     NOT person=friend
 WITH DISTINCT friend
 MATCH (friend)<-[membership:HAS_MEMBER]-(forum)
 WHERE
-    membership.joinDate > $minDate
+    membership.joinDate > 1288612800000
 WITH
     forum,
     collect(friend) AS friends

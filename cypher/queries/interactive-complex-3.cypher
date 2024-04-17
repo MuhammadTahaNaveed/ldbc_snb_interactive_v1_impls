@@ -8,9 +8,9 @@
   1277812800000 AS endDate
 }
 */
-MATCH (countryX:Country {name: $countryXName }),
-      (countryY:Country {name: $countryYName }),
-      (person:Person {id: $personId })
+MATCH (countryX:Country {name: "Angola" }),
+      (countryY:Country {name: "Colombia" }),
+      (person:Person {id: 6597069766734 })
 WITH person, countryX, countryY
 LIMIT 1
 MATCH (city:City)-[:IS_PART_OF]->(country:Country)
@@ -21,7 +21,7 @@ WHERE NOT person=friend AND NOT city IN cities
 WITH DISTINCT friend, countryX, countryY
 MATCH (friend)<-[:HAS_CREATOR]-(message),
       (message)-[:IS_LOCATED_IN]->(country)
-WHERE $endDate > message.creationDate >= $startDate AND
+WHERE 1277812800000 > message.creationDate >= 1275393600000 AND
       country IN [countryX, countryY]
 WITH friend,
      CASE WHEN country=countryX THEN 1 ELSE 0 END AS messageX,

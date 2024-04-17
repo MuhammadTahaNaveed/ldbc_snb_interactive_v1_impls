@@ -6,11 +6,11 @@
   2011 AS workFromYear
 }
 */
-MATCH (person:Person {id: $personId })-[:KNOWS*1..2]-(friend:Person)
+MATCH (person:Person {id: 10995116277918 })-[:KNOWS*1..2]-(friend:Person)
 WHERE not(person=friend)
 WITH DISTINCT friend
-MATCH (friend)-[workAt:WORK_AT]->(company:Company)-[:IS_LOCATED_IN]->(:Country {name: $countryName })
-WHERE workAt.workFrom < $workFromYear
+MATCH (friend)-[workAt:WORK_AT]->(company:Company)-[:IS_LOCATED_IN]->(:Country {name: "Hungary" })
+WHERE workAt.workFrom < 2011
 RETURN
         friend.id AS personId,
         friend.firstName AS personFirstName,
