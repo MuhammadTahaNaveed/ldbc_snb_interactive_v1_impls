@@ -1,0 +1,2 @@
+MATCH (f:Forum {id: 1786706433093}), (p:Person {id: 32985348839299})
+CREATE (f)-[:HAS_MEMBER {joinDate: 1347528962967}]->(p)
