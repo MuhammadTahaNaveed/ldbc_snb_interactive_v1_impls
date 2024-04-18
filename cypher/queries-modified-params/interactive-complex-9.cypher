@@ -1,11 +1,11 @@
 // Q9. Recent messages by friends or friends of friends
 /*
 :param [{ personId, maxDate }] => { RETURN
-  6597069786683 AS personId,
+  2199023263575 AS personId,
   1289908800000 AS maxDate
 }
 */
-MATCH (root:Person {id: 6597069786683 })-[:KNOWS*1..2]-(friend:Person)
+MATCH (root:Person {id: 2199023263575 })-[:KNOWS*1..2]-(friend:Person)
 WHERE NOT friend = root
 WITH collect(distinct friend) as friends
 UNWIND friends as friend

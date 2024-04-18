@@ -1,8 +1,8 @@
 // IS6. Forum of a message
 /*
-:param messageId: 6597069786683
+:param messageId: 2061585185686
  */
-MATCH (m:Message {id: 6597069786683 })-[:REPLY_OF*0..]->(p:Post)<-[:CONTAINER_OF]-(f:Forum)-[:HAS_MODERATOR]->(mod:Person)
+MATCH (m:Message {id: 2061585185686 })-[:REPLY_OF*0..]->(p:Post)<-[:CONTAINER_OF]-(f:Forum)-[:HAS_MODERATOR]->(mod:Person)
 RETURN
     f.id AS forumId,
     f.title AS forumTitle,

@@ -1,8 +1,8 @@
 // Q7. Recent likers
 /*
-:param personId: 6597069786683
+:param personId: 2199023263575
 */
-MATCH (person:Person {id: 6597069786683})<-[:HAS_CREATOR]-(message:Message)<-[like:LIKES]-(liker:Person)
+MATCH (person:Person {id: 2199023263575})<-[:HAS_CREATOR]-(message:Message)<-[like:LIKES]-(liker:Person)
     WITH liker, message, like.creationDate AS likeTime, person
     ORDER BY likeTime DESC, toInteger(message.id) ASC
     WITH liker, head(collect({msg: message, likeTime: likeTime})) AS latestLike, person

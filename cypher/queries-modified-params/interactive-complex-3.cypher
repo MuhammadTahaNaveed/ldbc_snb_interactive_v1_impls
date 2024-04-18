@@ -1,7 +1,7 @@
 // Q3. Friends and friends of friends that have been to given countries
 /*
 :param [{ personId, countryXName, countryYName, startDate, endDate }] => { RETURN
-  6597069786683 AS personId,
+  2199023263575 AS personId,
   "Angola" AS countryXName,
   "Colombia" AS countryYName,
   1275393600000 AS startDate,
@@ -10,7 +10,7 @@
 */
 MATCH (countryX:Country {name: "Angola" }),
       (countryY:Country {name: "Colombia" }),
-      (person:Person {id: 6597069786683 })
+      (person:Person {id: 2199023263575 })
 WITH person, countryX, countryY
 LIMIT 1
 MATCH (city:City)-[:IS_PART_OF]->(country:Country)

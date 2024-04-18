@@ -1,11 +1,11 @@
 // Q5. New groups
 /*
 :param [{ personId, minDate }] => { RETURN
-  6597069786683 AS personId,
+  2199023263575 AS personId,
   1288612800000 AS minDate
 }
 */
-MATCH (person:Person { id: 6597069786683 })-[:KNOWS*1..2]-(friend)
+MATCH (person:Person { id: 2199023263575 })-[:KNOWS*1..2]-(friend)
 WHERE
     NOT person=friend
 WITH DISTINCT friend

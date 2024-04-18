@@ -1,11 +1,11 @@
 // Q14. Trusted connection paths
 /*
 :param [{ person1Id, person2Id }] => { RETURN
-  6597069786683 AS person1Id,
+  2199023263575 AS person1Id,
   143 AS person2Id
 }
 */
-MATCH path = allShortestPaths((person1:Person { id: 6597069786683 })-[:KNOWS*0..]-(person2:Person { id: 143 }))
+MATCH path = allShortestPaths((person1:Person { id: 2199023263575 })-[:KNOWS*0..]-(person2:Person { id: 143 }))
 WITH collect(path) as paths
 UNWIND paths as path
 WITH path, relationships(path) as rels_in_path
