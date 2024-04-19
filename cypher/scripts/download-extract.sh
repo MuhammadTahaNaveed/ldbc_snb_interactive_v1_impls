@@ -31,7 +31,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Extract the downloaded file using tar
-tar -xf $FILENAME
+tar -I zstd -xf $FILENAME
 
 # Check if extraction was successful
 if [ $? -ne 0 ]; then
