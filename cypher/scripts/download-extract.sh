@@ -2,13 +2,13 @@
 
 # Check if an argument is provided
 if [ $# -ne 1 ]; then
-    echo "Usage: $0 <sf1 or sf10>"
+    echo "Usage: $0 <sf1, sf3 or sf10>"
     exit 1
 fi
 
-# Check if the argument is either sf1 or sf10
-if [ "$1" != "sf1" ] && [ "$1" != "sf10" ]; then
-    echo "Argument must be sf1 or sf10"
+# Check if the argument is either sf1, sf3 or sf10
+if [ "$1" != "sf1" ]&& [ "$1" != "sf3" ] && [ "$1" != "sf10" ]; then
+    echo "Argument must be sf1, sf3 or sf10"
     exit 1
 fi
 
